@@ -22,7 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Color.fromARGB(255,255,118,34) , Color.fromARGB(255,255,255,255)],
+            gradient:
+            LinearGradient(colors: [Color.fromARGB(255,255,118,34) , Color.fromARGB(255,255,255,255)],
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft
             ),
@@ -32,7 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height:130,),
-
 
             Expanded(
 
@@ -58,12 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
 
 
-
-
-
-
-
-            SizedBox(height: 40,),
+            SizedBox(height: 60,),
             Container(
               width: 327,
               height: 62 ,
@@ -83,7 +78,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child:
               Center(child: Text("skip" ,style: TextStyle(fontSize:18 ,color: Colors.black54),)),
-            )
+            ),
+            SizedBox(height: 20,)
           ],
         ),
       ),
@@ -94,17 +90,25 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  // Container(
+                  //   width: 240,
+                  //   height: 292,
+                  //   decoration:
+                  //   BoxDecoration(
+                  //   color: Colors.black12,
+                  //       borderRadius: BorderRadius.circular(20)),
+                  //   child: Image(
+                  //       image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsWRnzBT4W8inf6BJ7P6Hm5Uxq8jDYtl5E1Q&usqp=CAU"),
+                  //   width: double.infinity,
+                  //     height: 20,
+                  //   ),
+                  // ),
                   Container(
-                    width: 240,
+                    width: 290,
                     height: 292,
-                    decoration:
-                    BoxDecoration(
-                    color: Colors.black12,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Image(
-                        image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsWRnzBT4W8inf6BJ7P6Hm5Uxq8jDYtl5E1Q&usqp=CAU"),
-                    width: double.infinity,
-                      height: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(image: NetworkImage("https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=2000"),fit: BoxFit.cover)
                     ),
                   ),
                   SizedBox(height: 29,),

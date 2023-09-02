@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project001/HomeScreen.dart';
+import 'package:Food_Station/HomeScreen.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,10 +13,11 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 2 )).then((value){
+    Future.delayed(Duration(seconds: 5 )).then((value){
 
 
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen()));
+
       setState(() { });
 
     });
@@ -44,7 +43,10 @@ class _SplashScreenState extends State<SplashScreen> {
             Icon(Icons.motorcycle_rounded ,
             size: 80,
             color: Colors.white,),
-            Text("Food Station",style: TextStyle(fontSize: 25 ,fontWeight: FontWeight.bold ,color: Colors.white , ),)
+            Text(
+              "Food Station",
+              style: TextStyle(fontSize: 25 ,fontWeight: FontWeight.bold ,color: Colors.white , )
+              ,)
           ],
         ),
       ),

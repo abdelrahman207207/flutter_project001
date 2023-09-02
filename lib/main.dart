@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project001/SplashScreen.dart';
+import 'package:Food_Station/SplashScreen.dart';
 import 'HomeScreen.dart';
 
 void main() {
