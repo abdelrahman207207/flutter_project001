@@ -54,27 +54,35 @@ class _HomeScreenState extends State<HomeScreen> {
                 dotHeight: 15,
                 dotColor: Colors.orange,
                 dotWidth: 10,
+                expansionFactor: Checkbox.width
               ),
             ),
 
 
             SizedBox(height: 60,),
-            Container(
-              width: 327,
-              height: 62 ,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Color.fromARGB(255,255,118,34),
+            GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, "shopcategory");
+              },
+              child: Container(
+                width: 327,
+                height: 62 ,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Color.fromARGB(255,255,118,34),
+                ),
+                child:
+                Center(child: Text("Next" ,style: TextStyle(fontSize:18 ,color: Colors.white),)),
               ),
-              child:
-              Center(child: Text("Next" ,style: TextStyle(fontSize:18 ,color: Colors.white),)),
             ),
+
+
             SizedBox(height: 10,),
             Container(
               width: 327,
               height: 62 ,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(12),
               ),
               child:
               Center(child: Text("skip" ,style: TextStyle(fontSize:18 ,color: Colors.black54),)),
