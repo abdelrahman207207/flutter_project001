@@ -163,7 +163,7 @@ class _categorypageState extends State<categorypage> {
                           BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               image: DecorationImage(image: NetworkImage(
-                                  "https://media.istockphoto.com/id/469354734/photo/fresh-and-raw-meat-sirloin-medallions-steaks.jpg?s=612x612&w=0&k=20&c=OH-FtjIgFS2psxomUDTZ450Zc35VvyZCQP2w64cbl_4="),
+                                  "https://img.freepik.com/premium-photo/thanksgiving-dinner-table-with-new-traditional-thanksgiving-food-chicken-mashed-sweet-potatoes-green-beans-pecan-pie-baked-ham-pork-mac-cheese-stuffing-modern-hard-sunny-light-flatlay_136595-19951.jpg?w=2000"),
                                   fit: BoxFit.cover)
                           ),
                         ),
