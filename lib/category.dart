@@ -202,9 +202,11 @@ class _categorypageState extends State<categorypage> {
 
     );
   }
+  //commetted
   Text SideScrollCategory(String tet) => Text("$tet " , style: TextStyle(fontWeight: FontWeight.bold , fontSize: 13),);
 
 }
+
 
 
 
