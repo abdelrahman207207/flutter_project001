@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
 
-      home: orders() ,
+      home: categorypage() ,
 
       debugShowCheckedModeBanner: false,
     )

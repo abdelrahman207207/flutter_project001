@@ -107,7 +107,8 @@ class _ordersState extends State<orders> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(" \t \t\tFood : " , style: TextStyle(fontSize: 16 ,fontWeight: FontWeight.bold , color: Colors.grey),),
+                          Text(" \t \t\tFood : " ,
+                            style: TextStyle(fontSize: 16 ,fontWeight: FontWeight.bold , color: Colors.grey),),
                           Divider(color: Colors.grey,),
                           Row(
                             children: [
@@ -118,7 +119,8 @@ class _ordersState extends State<orders> {
                               height: 80,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  image: DecorationImage(image: NetworkImage("https://www.fsrmagazine.com/sites/default/files/styles/homepage_carousel_2x_640x476/public/sponsored_content/pasta-trends-restaurant-menus-1555087618.jpg?itok=EHNN6v3N"),fit: BoxFit.cover)
+                                  image: DecorationImage(image:
+                                  NetworkImage("https://www.fsrmagazine.com/sites/default/files/styles/homepage_carousel_2x_640x476/public/sponsored_content/pasta-trends-restaurant-menus-1555087618.jpg?itok=EHNN6v3N"),fit: BoxFit.cover)
                               ),),
                             ),
                               Padding(

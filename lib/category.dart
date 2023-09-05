@@ -1,4 +1,5 @@
 import 'package:Food_Station/HomeScreen.dart';
+import 'package:Food_Station/order.dart';
 import 'package:flutter/material.dart';
 import 'Orders.dart';
 import 'methods.dart';
@@ -10,6 +11,7 @@ class categorypage extends StatefulWidget {
 }
 
 class _categorypageState extends State<categorypage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,10 +24,11 @@ class _categorypageState extends State<categorypage> {
                 decoration: BoxDecoration(
                 color: Colors.blue,
                   ),
-                  child: CircleAvatar(backgroundImage: NetworkImage("https://img.freepik.com/free-photo/bohemian-man-thinking_1368-3693.jpg?w=2000")),
+                  child: CircleAvatar(backgroundImage:
+                  NetworkImage("https://img.freepik.com/free-photo/bohemian-man-thinking_1368-3693.jpg?w=2000")),
                    ),
                 ListTile(
-                  leading: Icon(Icons.home),
+                  leading: Icon(Icons.shopping_cart),
                   title: const Text('Welcome Screen'),
                   onTap: () =>
                   Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const HomeScreen()))
@@ -140,7 +143,7 @@ class _categorypageState extends State<categorypage> {
                 height: 70,
                 width: double.infinity,
                 child: ListView.builder(
-                    itemCount: hcat.length,
+                    itemCount: Arrays.hcat.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context,index)=>
                         Container(
@@ -182,11 +185,17 @@ class _categorypageState extends State<categorypage> {
         Container(
           width: double.infinity,
           height: 411,
-          child: ListView.builder( itemCount: cat.length ,scrollDirection: Axis.vertical, itemBuilder: (context,index)=>
+          child: ListView.builder( itemCount: Arrays.cat.length ,
+              scrollDirection: Axis.vertical,
+              itemBuilder: (context,index)=>
             Padding(
               padding: const EdgeInsets.all(10.0),
               child:
-              itemv.verticallist( index ),
+              InkWell(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  OrderPage()));
+                  },
+                  child: itemv.verticallist( index )),
             )
         ),
       ),
