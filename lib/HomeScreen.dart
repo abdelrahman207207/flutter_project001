@@ -1,3 +1,4 @@
+import 'package:Food_Station/Login_screen/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -59,15 +60,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
             SizedBox(height: 60,),
-            Container(
-              width: 327,
-              height: 62 ,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Color.fromARGB(255,255,118,34),
+            InkWell(
+              onTap: ()=>
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const LoginScreen())),
+
+              child: Container(
+                width: 327,
+                height: 62 ,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Color.fromARGB(255,255,118,34),
+                ),
+                child:
+                Center(child: Text("Next" ,style: TextStyle(fontSize:18 ,color: Colors.white),)),
               ),
-              child:
-              Center(child: Text("Next" ,style: TextStyle(fontSize:18 ,color: Colors.white),)),
             ),
             SizedBox(height: 10,),
             Container(
