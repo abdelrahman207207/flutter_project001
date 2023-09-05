@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'methods.dart';
 class categorypage extends StatefulWidget {
   const categorypage({super.key});
 
@@ -106,7 +106,7 @@ class _categorypageState extends State<categorypage> {
                 height: 70,
                 width: double.infinity,
                 child: ListView.builder(
-                    itemCount: 10,
+                    itemCount: 5,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context,index)=>
                         Container(
@@ -116,7 +116,7 @@ class _categorypageState extends State<categorypage> {
                                 color: Colors.grey.withOpacity(0.5),
                                 spreadRadius: 4,
                                 blurRadius: 8,
-                                offset: Offset(-1 , -1), // changes position of shadow
+                                offset: Offset(-2 , -2), // changes position of shadow
                                         ),
                                         ],
                             color: Colors.black12,
@@ -125,7 +125,9 @@ class _categorypageState extends State<categorypage> {
                           width: 120,
                           alignment: Alignment.center,
                           margin: EdgeInsets.all(10),
-                          child: SideScrollCategory("Meet And Fruits"),
+                          child:
+                          categorysidebar("https://assets.stickpng.com/images/58469c62cef1014c0b5e47f6.png","frute")
+                          // SideScrollCategory("Meet And Fruits"),
                         ))),
             Row(
               children: [
@@ -145,66 +147,76 @@ class _categorypageState extends State<categorypage> {
 
               ],
             ),
-            Container(
-              width: double.infinity,
+      Container(
+        width: double.infinity,
 
-              height: 411,
-
-
-              child: ListView.builder( itemCount: 12 ,scrollDirection: Axis.vertical, itemBuilder: (context,index)=>
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 360,
-                          height: 150,
-                          decoration:
-                          BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(image: NetworkImage(
-                                  "https://media.istockphoto.com/id/469354734/photo/fresh-and-raw-meat-sirloin-medallions-steaks.jpg?s=612x612&w=0&k=20&c=OH-FtjIgFS2psxomUDTZ450Zc35VvyZCQP2w64cbl_4="),
-                                  fit: BoxFit.cover)
-                          ),
-                        ),
-                        SizedBox(width: 15,),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text("Rost Beef Meat", style: TextStyle(fontSize: 28 ,),),
-                            SizedBox(height: 20,),
-                            Text("Very Good Holland Pice", style: TextStyle(fontSize: 15 , color: Colors.grey),),
-                            Text("Price Start from :", style: TextStyle(fontSize: 15 , color: Colors.grey),),
-                            Text("300L.E", style: TextStyle(fontSize: 15 , color: Colors.grey),),
-
-                          ],
-                        )
-                      ],),
-                  )
+        height: 411,
 
 
-              ),
+        child: ListView.builder( itemCount: 5 ,scrollDirection: Axis.vertical, itemBuilder: (context,index)=>
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child:
+              verticallist(img:"https://img.freepik.com/premium-photo/thanksgiving-dinner-table-with-new-traditional-thanksgiving-food-chicken-mashed-sweet-potatoes-green-beans-pecan-pie-baked-ham-pork-mac-cheese-stuffing-modern-hard-sunny-light-flatlay_136595-19951.jpg?w=2000",imgtxt: "hotmeal" , price: "399" ),
             )
-
-
-
+        ),
+      ),
           ],
         ),
 
       ),
-
-
-
-
-
-
-
-
     );
   }
+
+  Column verticallist({required String img ,required String imgtxt ,required String price}) {
+    return Column(
+              children: [
+                Container(
+                  width: 360,
+                  height: 150,
+                  decoration:
+                  BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(image: NetworkImage(
+                          "$img"),
+                          fit: BoxFit.cover)
+                  ),
+                ),
+                SizedBox(width: 15,),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text("$imgtxt", style: TextStyle(fontSize: 28 ,),),
+                    SizedBox(height: 20,),
+                    Text("Very Good $imgtxt", style: TextStyle(fontSize: 15 , color: Colors.grey),),
+                    Text("Price Start from :", style: TextStyle(fontSize: 15 , color: Colors.grey),),
+                    Text("$price L.E", style: TextStyle(fontSize: 15 , color: Colors.grey),),
+
+                  ],
+                )
+              ],);
+  }
+
+
+  Row categorysidebar(String img , String txt) {
+    return Row(
+                          children: [
+                            SizedBox(width: 5,),
+                            CircleAvatar(
+                              backgroundColor: Colors.white70,
+                              backgroundImage: NetworkImage("$img"),
+                            ),
+                            SizedBox(width: 7,),
+                            Text("$txt" , style: TextStyle(fontWeight: FontWeight.bold , fontSize: 13),),                            ],
+                        );
+  }
+  //commetted
+
+
   Text SideScrollCategory(String tet) => Text("$tet " , style: TextStyle(fontWeight: FontWeight.bold , fontSize: 13),);
 
 }
+
 
 
 

@@ -42,9 +42,10 @@ class locationPage extends StatelessWidget {
               ),
               SizedBox(height: 40,),
 
-              InkWell(
-                onTap: () {
-                  _launchUrl;
+
+              InkWell (
+                onTap: () async {
+                  await( _launchUrl ) ;
                   print('\n123\n');
                 },
                 child: Container(
@@ -58,6 +59,7 @@ class locationPage extends StatelessWidget {
                   Center(child: Text("Restorant Location" ,style: TextStyle(fontSize:18 ,color: Colors.white),)),
                 ),
               ),
+
 
               SizedBox(height: 30,),
               Container(

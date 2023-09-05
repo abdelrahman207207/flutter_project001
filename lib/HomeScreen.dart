@@ -39,10 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
               child: PageView(
                 controller: _controller,
                 children:[
-                  SmothPageIndecatorScroller(),
-                  SmothPageIndecatorScroller(),
-                  SmothPageIndecatorScroller(),
-                  SmothPageIndecatorScroller(),
+                  SmothPageIndecatorScroller(img: "https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg" , imgtxt:  "All what you want " ,descrip: "you can find all your favorite  \n dishes with us "  ),
+                  SmothPageIndecatorScroller(img: "https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000" , imgtxt:  "Healthy food  " ,descrip: "Dite food and helthy food in each day   "  ),
+                  SmothPageIndecatorScroller(img: "https://img.freepik.com/premium-photo/arabian-food-hd-8k-wallpaper-stock-photographic-image_853645-46802.jpg?w=360" , imgtxt:  "Good presentation  " ,descrip: " new and unique style "  ),
+                  SmothPageIndecatorScroller(img: "https://static.vecteezy.com/system/resources/thumbnails/027/718/172/small/cooking-in-the-kitchen-in-a-restaurant-generative-ai-photo.jpg" , imgtxt:  "High Quality controll" ,descrip: "use the best chif in each kitchien "  ),
               ]
               ),
             ),
@@ -86,38 +86,26 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Column SmothPageIndecatorScroller() {
+  Column SmothPageIndecatorScroller({required String img ,required String imgtxt ,required String descrip}) {
     return Column(
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Container(
-                  //   width: 240,
-                  //   height: 292,
-                  //   decoration:
-                  //   BoxDecoration(
-                  //   color: Colors.black12,
-                  //       borderRadius: BorderRadius.circular(20)),
-                  //   child: Image(
-                  //       image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsWRnzBT4W8inf6BJ7P6Hm5Uxq8jDYtl5E1Q&usqp=CAU"),
-                  //   width: double.infinity,
-                  //     height: 20,
-                  //   ),
-                  // ),
+
                   Container(
                     width: 290,
                     height: 292,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(image: NetworkImage("https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg?w=2000"),fit: BoxFit.cover)
+                      image: DecorationImage(image: NetworkImage("$img"),fit: BoxFit.cover)
                     ),
                   ),
                   SizedBox(height: 29,),
                   Container(
-                    child: Text("All your favorites ", style: TextStyle(fontSize: 24 ,fontWeight: FontWeight.bold),),
+                    child: Text("$imgtxt", style: TextStyle(fontSize: 24 ,fontWeight: FontWeight.bold),),
                   ),
                   SizedBox(height: 10,),
                   Container(
-                    child: Text("Get all your loved foods in one once place\,\nyou just place the orer we do the rest ", style: TextStyle(fontSize: 16 ,),),
+                    child: Text("$descrip", style: TextStyle(fontSize: 16 ,),),
                   )
                 ],
               );
