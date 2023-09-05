@@ -1,5 +1,6 @@
 import 'package:Food_Station/HomeScreen.dart';
 import 'package:flutter/material.dart';
+import 'Orders.dart';
 import 'methods.dart';
 class categorypage extends StatefulWidget {
   const categorypage({super.key});
@@ -76,7 +77,11 @@ class _categorypageState extends State<categorypage> {
                   width: 35,
                   height: 35,
                   decoration: BoxDecoration( color: Colors.black, borderRadius: BorderRadius.circular(50)),
-                  child:Icon(Icons.food_bank_outlined,color: Colors.white,),
+                  child:InkWell(
+                      onTap: () =>
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const orders())),
+
+                      child: Icon(Icons.food_bank_outlined,color: Colors.white,)),
                 ),
               ),
 

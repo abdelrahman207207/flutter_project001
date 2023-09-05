@@ -1,4 +1,5 @@
 
+import 'package:Food_Station/Orders.dart';
 import 'package:flutter/material.dart';
 import 'package:Food_Station/SplashScreen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
 
-      home: SplashScreen() ,
+      home: orders() ,
 
       debugShowCheckedModeBanner: false,
     )

@@ -82,7 +82,7 @@ List <Map> hcat=[
   "htxt" : "checken",
   },
   {"cimg" : "https://thumbs.dreamstime.com/b/well-done-steak-suace-vagetables-food-photo-restaurant-menu-well-done-steak-suace-vagetables-reastaurant-151834963.jpg" ,
-  "txt" : "Well done meeet",
+  "htxt" : "meet",
   },
   {"cimg" : "https://media.istockphoto.com/id/857927726/photo/pasta-with-meat-tomato-sauce-and-vegetables.jpg?s=612x612&w=0&k=20&c=1bcoXcBKM7Hb1ASweDx-vcwXEgy-WrCGM71dVP2Cp0w=" ,
   "htxt" : " pasta ",
