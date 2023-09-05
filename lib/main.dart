@@ -15,7 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: categorypage() ,
+      // home: categorypage() ,
+      home: HomeScreen() ,
+      // home: SplashScreen() ,
+      //  home: locationPage() ,
+
       debugShowCheckedModeBanner: false,
     );
   }
