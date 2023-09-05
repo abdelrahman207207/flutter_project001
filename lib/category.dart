@@ -1,3 +1,4 @@
+import 'package:Food_Station/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'methods.dart';
 class categorypage extends StatefulWidget {
@@ -11,6 +12,33 @@ class _categorypageState extends State<categorypage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+        // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+                const DrawerHeader(
+                decoration: BoxDecoration(
+                color: Colors.blue,
+                  ),
+                  child: CircleAvatar(backgroundImage: NetworkImage("https://img.freepik.com/free-photo/bohemian-man-thinking_1368-3693.jpg?w=2000")),
+                   ),
+                ListTile(
+                  leading: Icon(Icons.home),
+                  title: const Text('Welcome Screen'),
+                  onTap: () =>
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const HomeScreen()))
+                  ,
+                  ),
+                Divider(color: Colors.grey,),
+                ListTile(
+                  leading: Icon(Icons.icecream),
+                  title: const Text('Items chosen'),
+                  onTap: () {
+                  },
+                  ),
+                  ],
+      ),),
       appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: Colors.transparent,
@@ -19,6 +47,7 @@ class _categorypageState extends State<categorypage> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
@@ -106,7 +135,7 @@ class _categorypageState extends State<categorypage> {
                 height: 70,
                 width: double.infinity,
                 child: ListView.builder(
-                    itemCount: 5,
+                    itemCount: hcat.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context,index)=>
                         Container(
@@ -116,7 +145,7 @@ class _categorypageState extends State<categorypage> {
                                 color: Colors.grey.withOpacity(0.5),
                                 spreadRadius: 4,
                                 blurRadius: 8,
-                                offset: Offset(-2 , -2), // changes position of shadow
+                                offset: Offset(-3 , -3), // changes position of shadow
                                         ),
                                         ],
                             color: Colors.black12,
@@ -126,7 +155,7 @@ class _categorypageState extends State<categorypage> {
                           alignment: Alignment.center,
                           margin: EdgeInsets.all(10),
                           child:
-                          categorysidebar("https://assets.stickpng.com/images/58469c62cef1014c0b5e47f6.png","frute")
+                          itemv.categorysidebar(index)
                           // SideScrollCategory("Meet And Fruits"),
                         ))),
             Row(
@@ -143,21 +172,16 @@ class _categorypageState extends State<categorypage> {
                 //   padding: const EdgeInsets.fromLTRB(0, 19 , 0 , 10),
                 //   child: Icon(Icons.arrow_forward_ios_outlined , size: 15,color: Colors.grey,),
                 // )
-
-
               ],
             ),
-      Container(
-        width: double.infinity,
-
-        height: 411,
-
-
-        child: ListView.builder( itemCount: 5 ,scrollDirection: Axis.vertical, itemBuilder: (context,index)=>
+        Container(
+          width: double.infinity,
+          height: 411,
+          child: ListView.builder( itemCount: cat.length ,scrollDirection: Axis.vertical, itemBuilder: (context,index)=>
             Padding(
               padding: const EdgeInsets.all(10.0),
               child:
-              verticallist(img:"https://img.freepik.com/premium-photo/thanksgiving-dinner-table-with-new-traditional-thanksgiving-food-chicken-mashed-sweet-potatoes-green-beans-pecan-pie-baked-ham-pork-mac-cheese-stuffing-modern-hard-sunny-light-flatlay_136595-19951.jpg?w=2000",imgtxt: "hotmeal" , price: "399" ),
+              itemv.verticallist( index ),
             )
         ),
       ),
@@ -168,48 +192,52 @@ class _categorypageState extends State<categorypage> {
     );
   }
 
-  Column verticallist({required String img ,required String imgtxt ,required String price}) {
-    return Column(
-              children: [
-                Container(
-                  width: 360,
-                  height: 150,
-                  decoration:
-                  BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(image: NetworkImage(
-                          "$img"),
-                          fit: BoxFit.cover)
-                  ),
-                ),
-                SizedBox(width: 15,),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text("$imgtxt", style: TextStyle(fontSize: 28 ,),),
-                    SizedBox(height: 20,),
-                    Text("Very Good $imgtxt", style: TextStyle(fontSize: 15 , color: Colors.grey),),
-                    Text("Price Start from :", style: TextStyle(fontSize: 15 , color: Colors.grey),),
-                    Text("$price L.E", style: TextStyle(fontSize: 15 , color: Colors.grey),),
+  //
+  // Column verticallist({required String img ,required String imgtxt ,required String price}) {
+  //   return Column(
+  //             children: [
+  //               Container(
+  //                 width: 360,
+  //                 height: 150,
+  //                 decoration:
+  //                 BoxDecoration(
+  //                     borderRadius: BorderRadius.circular(20),
+  //                     image: DecorationImage(image: NetworkImage(
+  //                         "$img"),
+  //                         fit: BoxFit.cover)
+  //                 ),
+  //               ),
+  //               SizedBox(width: 15,),
+  //               Column(
+  //                 mainAxisAlignment: MainAxisAlignment.start,
+  //                 children: [
+  //                   Text("$imgtxt", style: TextStyle(fontSize: 28 ,),),
+  //                   SizedBox(height: 20,),
+  //                   Text("Very Good $imgtxt", style: TextStyle(fontSize: 15 , color: Colors.grey),),
+  //                   Text("Price Start from :", style: TextStyle(fontSize: 15 , color: Colors.grey),),
+  //                   Text("$price L.E", style: TextStyle(fontSize: 15 , color: Colors.grey),),
+  //
+  //                 ],
+  //               )
+  //             ],);
+  // }
 
-                  ],
-                )
-              ],);
-  }
 
 
-  Row categorysidebar(String img , String txt) {
-    return Row(
-                          children: [
-                            SizedBox(width: 5,),
-                            CircleAvatar(
-                              backgroundColor: Colors.white70,
-                              backgroundImage: NetworkImage("$img"),
-                            ),
-                            SizedBox(width: 7,),
-                            Text("$txt" , style: TextStyle(fontWeight: FontWeight.bold , fontSize: 13),),                            ],
-                        );
-  }
+
+
+  // Row categorysidebar(String img , String txt) {
+  //   return Row(
+  //                         children: [
+  //                           SizedBox(width: 8,),
+  //                           CircleAvatar(
+  //                             backgroundColor: Colors.white70,
+  //                             backgroundImage: NetworkImage("$img"),
+  //                           ),
+  //                           SizedBox(width: 7,),
+  //                           Text("$txt" , style: TextStyle(fontWeight: FontWeight.bold , fontSize: 13),),],
+  //                       );
+  // }
   //commetted
 
 
