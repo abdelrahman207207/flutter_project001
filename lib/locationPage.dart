@@ -1,5 +1,7 @@
+import 'package:Food_Station/category.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 
 
 class locationPage extends StatelessWidget {
@@ -7,13 +9,20 @@ class locationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Uri _url = Uri.parse("https://goo.gl/maps/LvvLSziFy7vQJn438");
-
+    final Uri _url = Uri.parse('https://goo.gl/maps/1CdWbQYdDJmpxLxB6');
     Future<void> _launchUrl() async {
       if (!await launchUrl(_url)) {
-        throw 'Could not launch $_url';
+        throw Exception('Could not launch $_url');
       }
-  }
+    }
+
+  //   final Uri _url = Uri.parse("https://goo.gl/maps/LvvLSziFy7vQJn438");
+  //
+  //   Future<void> _launchUrl() async {
+  //     if (!await launchUrl(_url)) {
+  //       throw 'Could not launch $_url';
+  //     }
+  // }
     return Scaffold(
 
       body:
@@ -44,10 +53,7 @@ class locationPage extends StatelessWidget {
 
 
               InkWell (
-                onTap: () async {
-                  await( _launchUrl ) ;
-                  print('\n123\n');
-                },
+                onTap:  _launchUrl ,
                 child: Container(
                   width: 307,
                   height: 62 ,
@@ -62,16 +68,21 @@ class locationPage extends StatelessWidget {
 
 
               SizedBox(height: 30,),
-              Container(
-                width: 307,
-                height: 62 ,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color.fromARGB(255,255,118,34),
+              InkWell(
+                onTap: () =>
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const categorypage())),
+                child: Container(
+                  width: 307,
+                  height: 62 ,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color.fromARGB(255,255,118,34),
+                  ),
+                  child:
+                  Center(child: Text("See Our Products" ,style: TextStyle(fontSize:18 ,color: Colors.white),)),
                 ),
-                child:
-                Center(child: Text("See Our Products" ,style: TextStyle(fontSize:18 ,color: Colors.white),)),
               ),
+
 
             ]),
       ),
