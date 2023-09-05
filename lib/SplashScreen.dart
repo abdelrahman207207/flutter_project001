@@ -41,9 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.motorcycle_rounded ,
-            size: 80,
-            color: Colors.white,),
+            Image(image: NetworkImage("https://cdn-icons-png.flaticon.com/512/2771/2771401.png")),
             Text(
               "Food Station",
               style: TextStyle(fontSize: 25 ,fontWeight: FontWeight.bold ,color: Colors.white , )
