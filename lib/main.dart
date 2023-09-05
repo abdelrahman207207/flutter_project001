@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: categorypage() ,
       // home: HomeScreen() ,
-      home: SplashScreen() ,
-      //  home: locationPage() ,
+      // home: SplashScreen() ,
+       home: locationPage() ,
 
       debugShowCheckedModeBanner: false,
     );
