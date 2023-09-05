@@ -1,0 +1,14 @@
+{
+    "email": "EMAIL",
+     "login": "Login",
+     "password": "PASSWORD",
+     "phone": "PHONE",
+     "name": "NAME",
+     "creataccount": "Create an account",
+     "sinuptocontinue": "sign up to continue",
+     "enteraccount": "Enter your account",
+     "logintocontonue": "Login to continue",
+      "signup": "Sign up"
+
+
+}
