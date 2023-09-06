@@ -1,3 +1,4 @@
+import 'package:Food_Station/helper/hive_helper.dart';
 import 'package:Food_Station/widgets/submit_button.dart';
 import 'package:flutter/material.dart';
 
@@ -23,13 +24,18 @@ class _OrderPageState extends State<OrderPage> {
       return Color(0xffF0F5FA);
     }
   }
-
   double cost = 0;
   double totalCost = 0;
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor:  Color.fromARGB(255, 251, 180, 98),
+        elevation: 0,
+        toolbarHeight: 30,
+      ),
       backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,10 +47,12 @@ class _OrderPageState extends State<OrderPage> {
                       bottomLeft: Radius.circular(48),
                       bottomRight: Radius.circular(48))),
               width: double.infinity,
-              height: 300,
-              child: Image.asset(
-                "assets/images/pngwing.com.png",
-              )),
+              height: 250,
+              child:
+              // Image(image: NetworkImage(test[0]["img"]),)
+              Image.asset(
+                "assets/images/pngwing.com.png",)
+          ),
           Container(
             decoration: const BoxDecoration(color: Colors.white),
             width: double.infinity,

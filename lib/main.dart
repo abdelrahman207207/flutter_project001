@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
 
-      home: HomeScreen() ,
+      home: SplashScreen() ,
 
       debugShowCheckedModeBanner: false,
     )
