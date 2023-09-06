@@ -7,8 +7,8 @@ import '../../category.dart';
 import '../../helper/DioHelper.dart';
 import '../../helper/hive_helper.dart';
 import '../Model/LoginModel.dart';
-
 part 'login_state.dart';
+
 
 
 
@@ -34,19 +34,18 @@ class LoginCubit extends Cubit<LoginState> {
         if(loginModel.status==true){
           HiveHelper.setToken(loginModel.data!.token!);
           DioHelper.headers["Authorization"]=loginModel.data?.token;
-
           Get.to(locationPage());
           Get.snackbar("Success", loginModel.message??"",backgroundColor: Colors.white);
-
           print("///////////////////////");
           print(loginModel.data?.token??"");
           emit(LoginSuccessState());
         }else{
           print("xxxxxxxxxxxxxxxxxxxxxx");
-          Get.snackbar("Error", loginModel.message??"",backgroundColor: Colors.blue);
+          Get.snackbar("Error", loginModel.message??"",backgroundColor: Colors.red);
           emit(LoginErrorState());
         }
-      }catch(e){
+      }
+      catch(e){
         emit(LoginErrorState());
       }
     
