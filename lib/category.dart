@@ -1,4 +1,5 @@
 import 'package:Food_Station/HomeScreen.dart';
+import 'package:Food_Station/helper/hive_helper.dart';
 import 'package:Food_Station/order.dart';
 import 'package:flutter/material.dart';
 import 'Orders.dart';
@@ -11,6 +12,7 @@ class categorypage extends StatefulWidget {
 }
 
 class _categorypageState extends State<categorypage> {
+  HiveHelper hiveHelper=HiveHelper();
   
   @override
   Widget build(BuildContext context) {
@@ -194,8 +196,10 @@ class _categorypageState extends State<categorypage> {
               InkWell(
                   onTap: (){
                     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  OrderPage()));
+                    HiveHelper.addData(Arrays.cat[index]);
                   },
                   child: itemv.verticallist( index )),
+
             )
         ),
       ),
