@@ -31,26 +31,41 @@ class _categorypageState extends State<categorypage> {
                   NetworkImage("https://img.freepik.com/free-photo/bohemian-man-thinking_1368-3693.jpg?w=2000")),
                    ),
                 ListTile(
+                  leading: Icon(Icons.group),
+                  title: const Text('contact us .'),
+                  onTap: () =>
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  OrderPage())),
+                  ),
+                  Divider(color: Colors.black38,),
+               ListTile(
+                            leading: Icon(Icons.favorite_border),
+                            title: const Text('My Favorites'),
+                            onTap: () =>
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  OrderPage())),
+                            ),
+                  Divider(color: Colors.black38,),
+
+                ListTile(
                   leading: Icon(Icons.icecream),
                   title: const Text('Ouer pest category '),
                   onTap: () =>
                       Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  OrderPage())),
                   ),
-            Divider(color: Colors.black38,),
+                  Divider(color: Colors.black38,),
                 ListTile(
                   leading: Icon(Icons.shopping_cart),
                   title: const Text('Your categore '),
                   onTap: () =>
                       Navigator.of(context).push(MaterialPageRoute(builder: (context)=>  orders())),
                   ),
-                Divider(color: Colors.black87),
+                  Divider(color: Colors.black87),
                 ListTile(
-              leading: Icon(Icons.restart_alt),
-              title: const Text('Log Out '),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const SplashScreen()));
-                HiveHelper.clearToken();
-              }
+                  leading: Icon(Icons.restart_alt),
+                  title: const Text('Log Out '),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const SplashScreen()));
+                    HiveHelper.clearToken();
+                  }
               ,
             ),
                   ],
