@@ -1,6 +1,7 @@
 import 'package:Food_Station/Login_screen/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -8,6 +9,7 @@ class HomeScreen extends StatefulWidget {
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
+
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -17,6 +19,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const List<String> web =[
+      "https://www.facebook.com/eldemshqy?mibextid=ZbWKwL" ,
+      "https://instagram.com/eldemeshkii?igshid=MzRlODBiNWFlZA==",
+    ];
+    final Uri _url = Uri.parse('https://www.facebook.com/eldemshqy?mibextid=ZbWKwL');
+    Future<void> _launchUrl() async {
+      if (!await launchUrl(_url)) {
+        throw Exception('Could not launch $_url');
+      }
+    }
     return Scaffold(
 
       body:
@@ -77,14 +89,18 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 10,),
-            Container(
-              width: 327,
-              height: 62 ,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
+            InkWell(
+              onTap:  _launchUrl ,
+              child: Container(
+                width: 50,
+                height: 42 ,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child:
+                Center(child: Icon(Icons.facebook,)),
               ),
-              child:
-              Center(child: Text("skip" ,style: TextStyle(fontSize:18 ,color: Colors.black54),)),
             ),
             SizedBox(height: 20,)
           ],

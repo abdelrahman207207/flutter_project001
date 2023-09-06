@@ -35,10 +35,11 @@ class MyApp extends StatelessWidget {
     ],
 
     child: GetMaterialApp(
+          // locale: Locale("en"),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
 
-      home: categorypage() ,
+      home: HomeScreen() ,
 
       debugShowCheckedModeBanner: false,
     )

@@ -120,7 +120,7 @@ class _ordersState extends State<orders> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   image: DecorationImage(image:
-                                  NetworkImage("https://www.fsrmagazine.com/sites/default/files/styles/homepage_carousel_2x_640x476/public/sponsored_content/pasta-trends-restaurant-menus-1555087618.jpg?itok=EHNN6v3N"),fit: BoxFit.cover)
+                                  NetworkImage("https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YnVyZ2VyfGVufDB8fDB8fHww&w=1000&q=80"),fit: BoxFit.cover)
                               ),),
                             ),
                               Padding(
@@ -131,8 +131,8 @@ class _ordersState extends State<orders> {
                                   children: [
                                     Row(
                                       children: [
-                                        Text("Pizza Hut", style: TextStyle(fontSize: 19)),
-                                        SizedBox(width: 80,),
+                                        Text("Purger King", style: TextStyle(fontSize: 19)),
+                                        SizedBox(width: 70,),
                                         Text("#162432", style: TextStyle(fontSize: 15 ,color: Colors.grey)),
                                       ],
                                     ),

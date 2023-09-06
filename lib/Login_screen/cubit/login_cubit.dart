@@ -1,3 +1,4 @@
+import 'package:Food_Station/locationPage.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class LoginCubit extends Cubit<LoginState> {
           HiveHelper.setToken(loginModel.data!.token!);
           DioHelper.headers["Authorization"]=loginModel.data?.token;
 
-          Get.to(categorypage());
+          Get.to(locationPage());
           Get.snackbar("Success", loginModel.message??"",backgroundColor: Colors.white);
 
           print("///////////////////////");
