@@ -92,7 +92,7 @@ class _ordersState extends State<orders> {
             Container(
               width: double.infinity,
               height: 645,
-              child: ListView.builder( itemCount:8,scrollDirection: Axis.vertical, itemBuilder: (context,index)=>
+              child: ListView.builder( itemCount:3,scrollDirection: Axis.vertical, itemBuilder: (context,index)=>
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child:
@@ -103,7 +103,8 @@ class _ordersState extends State<orders> {
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.transparent,
                         ),
-                      child: Column(
+                      child:
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -159,6 +160,7 @@ class _ordersState extends State<orders> {
                   )
               ),
             ),
+
           ],
         )
 

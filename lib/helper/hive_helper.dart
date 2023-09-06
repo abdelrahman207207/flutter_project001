@@ -1,13 +1,16 @@
 import 'package:hive/hive.dart';
 
 class HiveHelper {
+
   static const myToken="myToken";
   static const myTokenKey="mytokenkey";
   static var myTokenBox=Hive.box(myToken);
 
+
   static const myData="mydata";
   static const myDataKey="mydatakey";
   static var myDataBox=Hive.box(myData);
+
 
 
   static void setToken(String token)async{

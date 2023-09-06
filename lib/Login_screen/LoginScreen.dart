@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.orange,
         body: Container(
           width: double.infinity,
           child: Center(

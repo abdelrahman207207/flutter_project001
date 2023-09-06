@@ -35,12 +35,14 @@ class MyApp extends StatelessWidget {
     ],
 
     child: GetMaterialApp(
-          // locale: Locale("en"),
+
+          // locale: Locale("ar"),
+
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
 
-      home: SplashScreen() ,
-
+      // home: SplashScreen() ,
+      home: HiveHelper.getToken()==""? SplashScreen():categorypage() ,
       debugShowCheckedModeBanner: false,
     )
     );
